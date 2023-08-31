@@ -33,7 +33,8 @@ if uploaded_file is not None:
     st_profile_report(pr)
 else:
     st.info('Awaiting for CSV file, upload the csv')
-    if st.button('Press to use example data'): #EXAMPLE dataset
+    #if st.button('Press to use example data'): #EXAMPLE dataset
+    if st.button('[Press to use example data from Web](https://example.com/csv_data)'): # EXAMPLE dataset    
         @st.cache
         def load_data():  #(col,rows)
             a = pd.DataFrame(np.random.rand(100,5),
