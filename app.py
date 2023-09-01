@@ -35,26 +35,8 @@ if uploaded_file is not None:
     st_profile_report(pr)
 else:
     st.info('Awaiting for CSV file, upload the csv')
-    #if st.button('Press to use example data'): #EXAMPLE dataset
-    if st.button('[Press to use example data from Web](https://example.com/csv_data)'): # EXAMPLE dataset    
-        @st.cache
-        def load_data():  #(col,rows)
-            a = pd.DataFrame(np.random.rand(100,5),
-                                columns=['age', 'banana', 'code', 'ear'])
-            return a
-        df =load_csv()
-        pr = ProfileReport(df, explorative= True)
-        st.header('**Input DF**')
-        st.write(df)
-        st.write('---')
-        st.header('**Profiling Report with Pandas**')
-        st_profile_report(pr)
 
   #Footer
-import streamlit as st
-
-# Your Streamlit app content
-
 # Add some space to push the footer to the bottom
 st.write("")
 st.write("")
