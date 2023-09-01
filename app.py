@@ -7,16 +7,18 @@ from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 
 #Title of web app
-st.markdown('''
-# **Exploratory Data Analysis Web Application**
-This web application is developed by M.Ishaque called **EDA App**
-''')
+st.markdown('<h1 style="text-align:center;">Exploratory Data Analysis Web Application</h1>', unsafe_allow_html=True)
 
-#Upload a file from PC
-with st.sidebar.header("upload your dataset (.csv)"):
+with st.sidebar.header("Upload your dataset (.csv)"):
     uploaded_file = st.sidebar.file_uploader("upload your file", type=["csv"])
-    df = sns.load_dataset('titanic')
-    st.sidebar.markdown("[Example CSV file](https://github.com/dataprofessor/data/blob/master/iris.csv)")
+    st.sidebar.markdown("Get a data set from a GitHub repository: [Example CSV file](https://github.com/dataprofessor/data/blob/master/iris.csv)")
+    
+# Add another horizontal line
+st.sidebar.markdown("<hr>", unsafe_allow_html=True)
+
+st.sidebar.markdown("What is Exploratory Data Analysis (EDA)? [google](https://www.geeksforgeeks.org/what-is-exploratory-data-analysis/)")
+
+
 
 #profiling report for pandas
 if uploaded_file is not None:
@@ -47,3 +49,9 @@ else:
         st.write('---')
         st.header('**Profiling Report with Pandas**')
         st_profile_report(pr)
+        
+#Footer
+st.markdown('''
+  **Copyright © 2023 Ishaque Alidad. All rights reserved.**
+  **Email:** eshaquehussain@gmail.com
+  ''', unsafe_allow_html=True)
