@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import seaborn as sns
-from pandas_profiling import ProfileReport
+# from pandas_profiling import ProfileReport
+from ydata_profiling import ProfileReport
+
 
 from streamlit_pandas_profiling import st_profile_report
 
@@ -69,4 +71,5 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 
